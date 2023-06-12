@@ -20,16 +20,17 @@ let list = document.querySelectorAll("#task_list");
 let left_container = document.querySelectorAll("#task_box");
 
 function drag(){
-list.forEach((box)=>{
+left_container.forEach((box)=>{
  box.addEventListener("dragstart",(e)=>{
     let selected = e.target;
-    left_container.addEventListener("dragover",(e)=>{
+    box.addEventListener("dragover",(e)=>{
       e.preventDefault();
       box.classList.add("hover");
+      console.log(dragging)
     });
     
     //when we leave the drag to the container
-    left_container.addEventListener("dragleave", () =>{
+    box.addEventListener("dragleave", () =>{
       box.classList.remove("hover")
       
     })
@@ -37,8 +38,8 @@ list.forEach((box)=>{
 
     
     //when dropping list into the container
-      left_container.addEventListener("drop",(e)=>{
-      left_container.appendChild(selected);
+      box.addEventListener("drop",(e)=>{
+      box.appendChild(list);
       box.classList.remove("hover")
       box.classList.add("hover_on_drop")
     })

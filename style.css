@@ -32,7 +32,6 @@ body {
   color: whitesmoke;
   cursor: grab;
   margin: 20px;
-  lin
   display: flex;
   align-items: center;
   border-radius: 10px;
@@ -119,7 +118,6 @@ body {
   height:60px;
   color: black;
   cursor: grab;
-  display: flex;
   align-items: center;
   border-radius: 10px;
   font-size:0.8rem;
