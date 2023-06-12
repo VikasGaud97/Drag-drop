@@ -22,7 +22,7 @@ let left_container = document.getElementById("task_box");
 function drag(){
 list.forEach((box)=>{
  box.addEventListener("dragstart",(e)=>{
-    let selected = e.target;
+    let selected = list
     box.addEventListener("dragover",(e)=>{
       e.preventDefault();
       box.classList.add("hover");
