@@ -17,19 +17,19 @@ createTask();
 //creating a function of dragging list from container
 
 let list = document.querySelectorAll("#task_list");
-let left_container = document.getElementById("task_box");
+let left_container = document.querySelectorAll("#task_box");
 
 function drag(){
 list.forEach((box)=>{
  box.addEventListener("dragstart",(e)=>{
-    let selected = list
-    box.addEventListener("dragover",(e)=>{
+    let selected = e.target;
+    left_container.addEventListener("dragover",(e)=>{
       e.preventDefault();
       box.classList.add("hover");
     });
     
     //when we leave the drag to the container
-    box.addEventListener("dragleave", (e) =>{
+    left_container.addEventListener("dragleave", () =>{
       box.classList.remove("hover")
       
     })
@@ -37,7 +37,7 @@ list.forEach((box)=>{
 
     
     //when dropping list into the container
-      box.addEventListener("drop",()=>{
+      left_container.addEventListener("drop",(e)=>{
       left_container.appendChild(selected);
       box.classList.remove("hover")
       box.classList.add("hover_on_drop")
