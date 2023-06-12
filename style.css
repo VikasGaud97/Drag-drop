@@ -49,7 +49,7 @@ body {
 }
 #task_list .hover_on_drop{
   background: #28c7fa;
- /* height:60px;*/
+  height:60px;
   color: white;
 }
 #task_list img{
