@@ -98,7 +98,7 @@ body {
   .container{
     border-radius: none;
     margin-top: 548px;
-    width: 370px;
+    width: 370px;!important
   }
 .inner_box {
   display: flex;
