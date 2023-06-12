@@ -22,15 +22,14 @@ let left_container = document.getElementById("task_box");
 function drag(){
 list.forEach((box)=>{
  box.addEventListener("dragstart",(e)=>{
-    let selected = e.target;// when we click for drag the elements
-    
+    let selected = e.target;
     box.addEventListener("dragover",(e)=>{
       e.preventDefault();
       box.classList.add("hover");
     });
     
     //when we leave the drag to the container
-    box.addEventListener("dragleave", () =>{
+    box.addEventListener("dragleave", (e) =>{
       box.classList.remove("hover")
       
     })
@@ -38,9 +37,8 @@ list.forEach((box)=>{
 
     
     //when dropping list into the container
-    box.addEventListener("drop",(e)=>{
-      left_container.appendChild(selected);
-      selected = null;
+      box.addEventListener("drop",()=>{
+      box.appendChild(selected);
       box.classList.remove("hover")
       box.classList.add("hover_on_drop")
     })
