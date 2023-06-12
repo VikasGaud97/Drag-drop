@@ -30,7 +30,7 @@ list.forEach((box)=>{
     });
     
     //when we leave the drag to the container
-    left_container.addEventListener("dragleave", () =>{
+    box.addEventListener("dragleave", () =>{
       box.classList.remove("hover")
       
     })
@@ -38,7 +38,7 @@ list.forEach((box)=>{
 
     
     //when dropping list into the container
-    left_container.addEventListener("drop",(e)=>{
+    box.addEventListener("drop",(e)=>{
       left_container.appendChild(selected);
       selected = null;
       box.classList.remove("hover")
