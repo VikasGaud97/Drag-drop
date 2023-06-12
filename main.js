@@ -38,7 +38,7 @@ list.forEach((box)=>{
     
     //when dropping list into the container
       box.addEventListener("drop",()=>{
-      box.appendChild(selected);
+      left_container.appendChild(selected);
       box.classList.remove("hover")
       box.classList.add("hover_on_drop")
     })
