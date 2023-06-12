@@ -32,6 +32,7 @@ body {
   color: whitesmoke;
   cursor: grab;
   margin: 20px;
+  lin
   display: flex;
   align-items: center;
   border-radius: 10px;
@@ -73,7 +74,7 @@ body {
 }
 .container .btn{
   margin-top:20px;
-  margin:0,auto;
+ justify-content: center;
   background: transparent;
  margin-left:43%;
  margin-top:50px;
@@ -89,7 +90,7 @@ body {
   color:black;
 }
 /*screen-size for all devices*/
-@media (min-width:320px) and (max-width:768px){
+@media (min-width:320px) and (max-width:480px){
   body{
     display: flex;
     background: #f0faff;
@@ -106,8 +107,9 @@ body {
   padding: 1.2rem;
 }
 #task_box {
+  justify-content: center;
   width: 300px;
-  min-height: 350px;
+  min-height: 360px;
   background-color: #f6f6f6;
   margin:40px;
   border-radius: 12px;
@@ -117,11 +119,12 @@ body {
   height:60px;
   color: black;
   cursor: grab;
-  margin: 5px;
+  display: flex;
   align-items: center;
   border-radius: 10px;
   font-size:0.8rem;
   margin:10px;
+  backdrop-filter: pink;
 }
 task_list img{
   width:6px;
@@ -130,7 +133,7 @@ task_list img{
 
 }
 button{
-  float: left;
+ 
   
 }
   
