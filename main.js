@@ -1,57 +1,54 @@
-//creating aaray to make  list of items 
-const tasks = ["Task 1", "Task 2", "Task 3", "Task 4", "Task 5"];
+let lists = document.getElementsByClassName(".list")
+// let right_box = document.getElementById("right")
+// let left_box = document.getElementById("left")
 
+// for (let lists of divChild) {
+//   lists.addEventListener("dragstart", function(e){
+//     let selected = e.target;
+//     right_box.addEventListener("dragover",function(e){
+//       e.preventDefault();
+//       // console.log(dragging)
+//     })
+//      right_box.addEventListener("drop",function(e){
+//       right_box.appendChild(divChild);
+//       selected = null;
+//     })
+//   })
+// }
+
+const parentNode = document.getElementById("left") //parent node
+let right_box = document.getElementById("right");
+
+
+const tasks = ["Task 1", "Task 2", "Task 3", "Task 4"];
 // creating function to child node in to parent node
 
-function createTask() {
-  for (let task_item of tasks) {
-const parentNode = document.getElementById("task_box")//parent node
-const divChild = document.createElement("div");//child node
-divChild.innerHTML= ` <div id="task_list" draggable="true"><img src="icon/drag.png">${task_item}</div>`;
-parentNode.appendChild(divChild); // adding childnode  into parentnode
-  }
-}
-createTask();
-
-
-//creating a function of dragging list from container
-
-let list = document.querySelectorAll("#task_list");
-let left_container = document.querySelectorAll("#task_box");
-
-function drag(){
-left_container.forEach((box)=>{
- box.addEventListener("dragstart",(e)=>{
-    let selected = e.target;
-    box.addEventListener("dragover",(e)=>{
+for (let task_item of tasks) {
+  let paraChild1 = document.createElement("div");
+  paraChild1.classList.add("list");
+  paraChild1.draggable = "true"
+  paraChild1.innerHTML = `<img src="icon/drag.png">${task_item}`;
+  parentNode.appendChild(paraChild1);
+  paraChild1.addEventListener("dragstart", function(e) {
+    let paraChild2 = document.createElement("div")
+    paraChild2 = e.target;
+    right_box.addEventListener("dragover", function(e) {
       e.preventDefault();
-      box.classList.add("hover");
-      console.log(dragging)
-    });
-    
-    //when we leave the drag to the container
-    box.addEventListener("dragleave", () =>{
-      box.classList.remove("hover")
-      
+      paraChild1.classList.add("hover")
     })
- 
-
-    
-    //when dropping list into the container
-      box.addEventListener("drop",(e)=>{
-      box.appendChild(list);
-      box.classList.remove("hover")
-      box.classList.add("hover_on_drop")
+    right_box.addEventListener("drop", function(e) {
+      right_box.appendChild(paraChild2);
     })
-  })
-})
-}
-drag()
+  });
 
-//function reset
-function reset(){
-    var container = document.querySelectorAll("#task_list");
-    var content = container.innerHTML;
-    container.innerHTML= content;
 }
-reset();
+
+function reset() {
+  var container;
+  location.reload(true) = function() {
+    container = document.getElementById("left").innerHTML;
+  };
+}
+
+const click = document.getElementById("btn")
+click.addEventListener("click", reset)
