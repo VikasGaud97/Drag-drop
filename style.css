@@ -1,4 +1,4 @@
-* {
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -28,11 +28,7 @@
   .inner_box {
     display: flex;
     justify-content: center;
-    /* background-color: aqua; */
-    /* height: 320px; */
    
-    
-  /*  background: blue;*/
   }
   #left, #right{
     border:2px solid #f6f6f6;
