@@ -5,7 +5,7 @@ let right_box = document.getElementById("right");
 const tasks = ["Task 1", "Task 2", "Task 3", "Task 4"];
 
 for (let task_item of tasks) {
-  let paraChild1 = document.createElement("div");
+  let paraChild1 = document.createElement("div");//childnode
   paraChild1.classList.add("list");
   paraChild1.draggable = "true"
   paraChild1.innerHTML = `<img src="icon/drag.png">${task_item}`;
